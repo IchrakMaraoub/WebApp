@@ -1,11 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
-products = [
-        {'id': 1, 'name': 'Lipstick', 'brand': 'Maybelline', 'price': '$10.99'},
-        {'id': 2, 'name': 'Mascara', 'brand': 'CoverGirl', 'price': '$8.99'},
-        # Add more products as needed
-    ]
+products = []
 
 # Existing route for displaying products
 @app.route('/')
