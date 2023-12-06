@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
-
+from product_data import products
 app = Flask(__name__)
-products = []
+
 
 # Existing route for displaying products
 @app.route('/')
