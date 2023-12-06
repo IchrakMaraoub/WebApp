@@ -1,5 +1,7 @@
+# module2_test.py
 import unittest
 from app import app
+from product_data import products
 
 class TestAppFunctionality(unittest.TestCase):
 
@@ -9,7 +11,7 @@ class TestAppFunctionality(unittest.TestCase):
 
     def test_add_product_functionality(self):
         # Test the functionality of adding a product
-        initial_products_count = len(app.products)
+        initial_products_count = len(products)
 
         response = self.app.post('/add_product', data=dict(
             name='Test Product',
@@ -23,7 +25,7 @@ class TestAppFunctionality(unittest.TestCase):
         self.assertIn(b'$9.99', response.data)
 
         # Check if the product count increased
-        final_products_count = len(app.products)
+        final_products_count = len(products)
         self.assertEqual(final_products_count, initial_products_count + 1)
 
 if __name__ == '__main__':
