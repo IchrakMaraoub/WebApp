@@ -1,6 +1,6 @@
 # module2_test.py
 import unittest
-from app import app
+from ..app import app
 from product_data import products
 
 class TestAppFunctionality(unittest.TestCase):
